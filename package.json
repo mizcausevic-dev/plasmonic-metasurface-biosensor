@@ -1,0 +1,25 @@
+{
+  "name": "plasmonic-metasurface-biosensor",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Interactive 34-second 3D explainer of an illustrative plasmonic gold split-ring metasurface biosensor.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "validate": "node --experimental-strip-types scripts/validate-model.ts",
+    "check:browser": "node scripts/browser-check.mjs"
+  },
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.2.5",
+    "@fontsource/space-grotesk": "^5.2.5",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@types/three": "0.180.0",
+    "playwright-core": "^1.56.0",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.5"
+  }
+}

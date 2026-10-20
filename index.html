@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plasmonic gold metasurface biosensor</title>
+    <meta
+      name="description"
+      content="A 34-second interactive explainer of an illustrative plasmonic gold split-ring metasurface biosensor. Not a measured or validated device."
+    />
+    <meta name="theme-color" content="#0A0C10" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip" href="#controls">Skip to controls</a>
+    <div id="app">
+      <header>
+        <div>
+          <p class="kicker">Illustrative model · 34.000 s · 1,020 frames</p>
+          <h1>Plasmonic gold metasurface biosensor</h1>
+        </div>
+        <button id="about-btn" type="button">About this model</button>
+        <p class="disclaimer">
+          Illustrative design. Not a fabricated, measured, or electromagnetically validated sensor. No detection limit, sensitivity, quality factor, or clinical performance is shown.
+        </p>
+      </header>
+      <main id="stage">
+        <canvas id="view" aria-label="3D presentation of the illustrative biosensor"></canvas>
+        <div id="fallback" hidden></div>
+        <svg id="leaders" aria-hidden="true"></svg>
+        <div id="labels"></div>
+        <div id="legend" hidden>
+          <p><span class="heat" aria-hidden="true"></span> Relative near-field intensity · illustrative</p>
+          <p><span class="plus" aria-hidden="true">+</span><span class="minus" aria-hidden="true">−</span> Schematic surface charge, separate from intensity</p>
+          <p><span aria-hidden="true">→</span> Gap field direction</p>
+        </div>
+        <ol id="callouts" hidden></ol>
+        <canvas id="chart" width="640" height="360" aria-label="Schematic transmission spectrum"></canvas>
+        <p id="loader" role="status">Loading explainer…</p>
+        <p id="error" role="alert" hidden></p>
+        <button id="big-play" type="button">Play presentation</button>
+      </main>
+      <section id="dock">
+        <p id="motion-note" hidden></p>
+        <p id="caption" aria-live="polite"></p>
+        <p id="scale-note"></p>
+        <p id="status-line" hidden></p>
+        <p id="param-note" hidden></p>
+        <div id="controls" class="transport" aria-label="Presentation controls">
+          <button id="play" type="button" aria-pressed="false">Play</button>
+          <button id="replay" type="button">Replay</button>
+          <label>
+            Time
+            <input
+              id="time"
+              type="range"
+              min="0"
+              max="34"
+              step="0.001"
+              value="0"
+              aria-label="Presentation time"
+              aria-valuemin="0"
+              aria-valuemax="34"
+              aria-valuenow="0"
+            />
+          </label>
+          <span id="readout">0.00 / 34.00 s, frame 0</span>
+        </div>
+        <div class="mix" aria-label="Audio levels">
+          <button id="mute" type="button" aria-pressed="false">Mute</button>
+          <label>Music <input id="music" type="range" min="0" max="1" step="0.01" value="0.72" aria-label="Music level" /></label>
+          <label>Effects <input id="sfx" type="range" min="0" max="1" step="0.01" value="0.68" aria-label="Effects level" /></label>
+          <button id="fullscreen" type="button">Fullscreen</button>
+        </div>
+        <div class="shots" role="group" aria-label="Jump to shot">
+          <button type="button" data-jump="0">1 Channel</button>
+          <button type="button" data-jump="5">2 Array</button>
+          <button type="button" data-jump="10">3 Gap</button>
+          <button type="button" data-jump="17">4 Capture</button>
+          <button type="button" data-jump="25">5 Readout</button>
+        </div>
+      </section>
+    </div>
+    <p id="chart-summary" class="sr-only" aria-live="polite"></p>
+    <p id="live" class="sr-only" aria-live="polite"></p>
+    <dialog id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About this model</h2>
+      <dl>
+        <dt>What it is</dt>
+        <dd>A 34-second interactive visualization of one illustrative plasmonic biosensor: PDMS channel, gold split-ring array, localized gap mode, surface capture, and an ensemble transmission readout.</dd>
+        <dt>Who it is for</dt>
+        <dd>Someone learning the transduction chain, from polarized light to a redshifted transmission minimum.</dd>
+        <dt>What it does not claim</dt>
+        <dd>It is not a fabricated device, an electromagnetic simulation, a kinetics fit, or a clinical assay. Numbers other than the 20 nm gap are illustrative design parameters.</dd>
+        <dt>How the picture is structured</dt>
+        <dd>One master clock drives the camera, cover, field, molecules, charts, and sound. Seeking recomputes state from time. It does not depend on frames already played.</dd>
+        <dt>How to use it</dt>
+        <dd>Play, pause, replay, or scrub. Keys: Space, arrows, Home, End, 1–5, M, R, F. Audio starts only after you play. Music and effects have separate levels.</dd>
+        <dt>Scientific choices</dt>
+        <dd>The mode is an electric-dipole gap resonance for this geometry and polarization, not a universal split-ring response. Binding is modeled as an increase in local refractive index that shifts an existing dip to longer wavelength, with depth and linewidth held constant. Occupancy is near-field-weighted. The optical cycle and the binding sequence are both slowed relative to their physical timescales, and those timescales are not the same.</dd>
+        <dt>Discovery, conversion, money</dt>
+        <dd>This page is the explainer. It does not collect leads, set analytics cookies, or sell anything.</dd>
+        <dt>Launch and revision</dt>
+        <dd>Ship as a static build. Replace the schematic spectrum only when a documented simulation or measurement exists, and label that source.</dd>
+      </dl>
+      <button id="about-close" type="button">Close</button>
+    </dialog>
+    <script type="module" src="/src/main.ts"></script>
+    <noscript>This explainer needs JavaScript to run the timeline, schematic spectrum, and 3D view.</noscript>
+  </body>
+</html>
